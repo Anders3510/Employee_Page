@@ -26,15 +26,21 @@ $(function () {
 			url: "GetEmployees.php",
 			data: obj,
 			beforeSend: function () {
+				//Toggle visibility for search field and sorting buttons
 				searchArea.toggle();
+				//Add loading gif
 				$('#btn-container').after('<img class="loading" src="https://i.gifer.com/1klM.gif" width="150" height="250">');
 			},
 			success: function (response) {
+				//Remove all table data
+				$('#data-body').children().remove();
+				//Remove loading gif
+				$('.loading').remove();
+				searchArea.toggle();
 				if (response.length > 0) {
-					$('#data-body').children().remove();
-					$('.loading').remove();
-					searchArea.toggle();
+					//Parse JSON
 					var data = JSON.parse(response);
+					//Iterate data array and add table data
 					for (let i = 0; i < data.length; i += 1) {
 						$('#data-body').append(
 							`<tr>
@@ -46,6 +52,7 @@ $(function () {
 							</tr>`
 						);
 					}
+					//Focus search field
 					$('#searchField').focus();
 				}
 				else {
@@ -67,6 +74,7 @@ $(function () {
 		if (e.keyCode === 13) {
 			var btnVal;
 			var foo = $('input[name="search"]:checked');
+			//If no radio button is checked
 			if (foo.val() == undefined) {
 				btnVal = "foo";
 			}
