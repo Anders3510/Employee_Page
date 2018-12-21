@@ -1,0 +1,49 @@
+html {
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 0.05vw;
+}
+
+body {
+	background-color: #282828;
+}
+
+table.table-dark {
+	border: 1px solid #505050;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+td.data {
+	padding: 8px;
+	border: 1px solid #505050;
+}
+
+th[scope="col"] {
+	padding: 5px;
+}
+
+#btn-container {
+	color: whitesmoke;
+}
+
+#btn-container>ul {
+	list-style: none;
+	padding: 0;
+}
+
+#btn-container>p {
+	margin-bottom: 5px;
+}
+
+.loading {
+	margin-top: 10px;
+}
+
+#searchField {
+	display: block;
+	margin-bottom: 15px;
+}
+
+label[for="searchField"] {
+	color: whitesmoke;
+}
